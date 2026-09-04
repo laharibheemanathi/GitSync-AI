@@ -120,10 +120,12 @@ __turbopack_context__.s([
     ()=>fetchUserContributions
 ]);
 // lib/github.ts
-var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$octokit$2f$rest$2f$dist$2d$web$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@octokit/rest/dist-web/index.js [app-route] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$octokit$2f$rest$2f$dist$2d$src$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/@octokit/rest/dist-src/index.js [app-route] (ecmascript)");
 ;
-// Initialize Octokit without authentication (rate limit: 60 req/hour)
-const octokit = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$octokit$2f$rest$2f$dist$2d$web$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["Octokit"]();
+// Initialize Octokit WITH authentication to prevent rate limits
+const octokit = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$octokit$2f$rest$2f$dist$2d$src$2f$index$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["Octokit"]({
+    auth: process.env.GITHUB_TOKEN
+});
 // Helper function to extract owner and repo from URL
 function parseRepoUrl(repoUrl) {
     const match = repoUrl.match(/github\.com[/:]([^/]+)\/([^/]+?)(?:\.git)?$/);
@@ -191,7 +193,8 @@ async function fetchFilesChanged(repoUrl, commitSHA) {
             additions: file.additions,
             deletions: file.deletions,
             changes: file.changes,
-            patch: file.patch || ""
+            // TRUNCATE THE PATCH TO SAVE TOKENS!
+            patch: file.patch ? file.patch.substring(0, 300) + "...[truncated]" : ""
         })) || [];
 }
 async function fetchUserContributions(repoUrl, username) {
@@ -280,7 +283,7 @@ async function fetchGitHubData(repoUrl, username, lastSHA = "") {
             fetchPullRequests(repoUrl),
             fetchIssues(repoUrl)
         ]);
-        const recentCommits = commits.slice(0, 5);
+        const recentCommits = commits.slice(0, 2);
         const filesChangedPromises = recentCommits.map((commit)=>fetchFilesChanged(repoUrl, commit.sha));
         const filesChangedResults = await Promise.all(filesChangedPromises);
         const allFilesChanged = filesChangedResults.flat();

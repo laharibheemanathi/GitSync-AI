@@ -2,5 +2,5 @@
   "version": 3,
   "sources": [],
   "sections": [
-    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/K.%20SNEHA%20REDDY/OneDrive/Desktop/GitSync%20AI/GitSync-AI/app/page.tsx"],"sourcesContent":["export default function Home() {\r\n  return (\r\n    <main style={{ padding: \"2rem\", fontFamily: \"Arial\" }}>\r\n      <h1>GitSync AI</h1>\r\n      <p>Your data pipeline is ready! Test the API at: POST /api/github</p>\r\n    </main>\r\n  );\r\n}"],"names":["Home","style","padding","fontFamily"],"mappings":";;;;;;AAAe,SAASA;IACtB,qBACE,8OAAC;QAAKC,OAAO;YAAEC,SAAS;YAAQC,YAAY;QAAQ;;0BAClD,8OAAC;0BAAG;;;;;;0BACJ,8OAAC;0BAAE;;;;;;;;;;;;AAGT"}}]
+    {"offset": {"line": 10, "column": 0}, "map": {"version":3,"sources":["file:///C:/Users/K.%20SNEHA%20REDDY/OneDrive/Desktop/GitSync%20AI/GitSync-AI/app/page.tsx"],"sourcesContent":["export default function Home() {\r\n  return (\r\n    <main className=\"flex min-h-screen flex-col items-center justify-between p-24\">\r\n      <h1 className=\"text-4xl font-bold\">GitSync AI</h1>\r\n      <p>Welcome to your AI-powered GitHub companion</p>\r\n    </main>\r\n  );\r\n}"],"names":["Home","className"],"mappings":";;;;;;AAAe,SAASA;IACtB,qBACE,8OAAC;QAAKC,WAAU;;0BACd,8OAAC;gBAAGA,WAAU;0BAAqB;;;;;;0BACnC,8OAAC;0BAAE;;;;;;;;;;;;AAGT"}}]
 }

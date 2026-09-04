@@ -1,8 +1,10 @@
 // lib/github.ts
 import { Octokit } from "@octokit/rest";
 
-// Initialize Octokit without authentication (rate limit: 60 req/hour)
-const octokit = new Octokit();
+// Initialize Octokit WITH authentication to prevent rate limits
+const octokit = new Octokit({
+  auth: process.env.GITHUB_TOKEN,
+});
 
 // Helper function to extract owner and repo from URL
 function parseRepoUrl(repoUrl: string): { owner: string; repo: string } {
@@ -84,7 +86,8 @@ export async function fetchFilesChanged(
     additions: file.additions,
     deletions: file.deletions,
     changes: file.changes,
-    patch: file.patch || "",
+    // TRUNCATE THE PATCH TO SAVE TOKENS!
+    patch: file.patch ? file.patch.substring(0, 300) + "...[truncated]" : "",
   })) || [];
 }
 
@@ -206,7 +209,7 @@ export async function fetchGitHubData(
       fetchIssues(repoUrl),
     ]);
 
-    const recentCommits = commits.slice(0, 5);
+    const recentCommits = commits.slice(0, 2);
     const filesChangedPromises = recentCommits.map((commit) =>
       fetchFilesChanged(repoUrl, commit.sha)
     );
