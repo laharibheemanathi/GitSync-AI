@@ -1,0 +1,15 @@
+{"timestamp":"00:00:10.675","source":"Server","level":"LOG","message":"It looks like you're trying to use TypeScript but do not have the required package(s) installed.\nInstalling dependencies\n\nIf you are not trying to use TypeScript, please remove the tsconfig.json file from your package root (and any TypeScript files in your app and pages directories).\n"}
+{"timestamp":"00:00:10.851","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:10.851","source":"Server","level":"LOG","message":"Installing devDependencies (npm):"}
+{"timestamp":"00:00:10.852","source":"Server","level":"LOG","message":"- typescript"}
+{"timestamp":"00:00:10.852","source":"Server","level":"LOG","message":"- @types/react"}
+{"timestamp":"00:00:10.853","source":"Server","level":"LOG","message":"- @types/node"}
+{"timestamp":"00:00:10.853","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:26.458","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:26.476","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:26.477","source":"Server","level":"LOG","message":"  We detected TypeScript in your project and created a tsconfig.json file for you."}
+{"timestamp":"00:00:27.132","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:01:06.755","source":"Server","level":"ERROR","message":"⨯ Error: The default export is not a React Component in \"/layout\""}
+{"timestamp":"00:01:06.771","source":"Server","level":"ERROR","message":"⨯ Error: The default export is not a React Component in \"/layout\""}
+{"timestamp":"00:01:09.921","source":"Browser","level":"ERROR","message":"Uncaught Error: The default export is not a React Component in \"/layout\""}
+{"timestamp":"00:01:09.923","source":"Server","level":"ERROR","message":"[browser] \"\\u001b[31mUncaught Error: The default export is not a React Component in \\\"/layout\\\"\\u001b[39m\""}
