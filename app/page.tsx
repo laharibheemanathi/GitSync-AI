@@ -1,8 +1,8 @@
 export default function Home() {
   return (
-    <main style={{ padding: "2rem", fontFamily: "Arial" }}>
-      <h1>GitSync AI</h1>
-      <p>Your data pipeline is ready! Test the API at: POST /api/github</p>
+    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      <h1 className="text-4xl font-bold">GitSync AI</h1>
+      <p>Welcome to your AI-powered GitHub companion</p>
     </main>
   );
 }

@@ -1,33 +1,18 @@
 {
   "name": "gitsync-ai",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/laharibheemanathi/GitSync-AI.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/laharibheemanathi/GitSync-AI/issues"
-  },
-  "homepage": "https://github.com/laharibheemanathi/GitSync-AI#readme",
   "dependencies": {
-    "@octokit/rest": "^20.1.1",
-    "next": "latest",
-    "react": "latest",
-    "react-dom": "latest"
+    "next": "^16.3.4",
+    "openai": "^7.10.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "devDependencies": {
     "@types/node": "26.4.1",
