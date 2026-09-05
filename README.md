@@ -15,9 +15,8 @@ Developers waste hours deciphering commit histories to understand how recent cha
 
 | AI Tool | Specific Role in Our Pipeline |
 | :--- | :--- |
-| **Featherless AI** | **Reasoning Engine:** Processes structured GitHub data to generate personalized impact analysis and structured JSON catch-up summaries. |
+| **Featherless AI** | **Reasoning Engine:** Processes structured GitHub data to generate personalized impact analysis and structured JSON catch-up summaries of each changed files. |
 | **CodeSpectra** | **Code Analysis:** Scans file diffs to detect security regressions and map file-to-file dependencies *before* LLM reasoning. |
-| **StepUpMark AI** | **Workflow Prioritization:** Takes identified risks (conflicts + security flags) and generates the final, ordered "Recommended Next Steps". |
 
 ---
 
@@ -25,8 +24,6 @@ Developers waste hours deciphering commit histories to understand how recent cha
 1. **Fetch & Structure:** Next.js backend fetches raw GitHub API data and compacts it into a highly efficient JSON payload.
 2. **Code Analysis:** CodeSpectra scans the diffs to flag security vulnerabilities and identify overlapping line modifications.
 3. **AI Reasoning:** Featherless AI receives the structured data and risk flags to infer personalized impact based on the user's role.
-4. **Prioritize & Render:** StepUpMark AI orders the findings into actionable steps, which the frontend renders as color-coded risk and action cards.
-
 ---
 
 ##  File Structure & Functions
